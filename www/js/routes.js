@@ -9,7 +9,7 @@ angular.module('app.routes', [])
   $stateProvider
 .state('gitgub', {
     url: '/mainTab',
-    templateUrl: 'templates/gitTabs.html',
+    templateUrl: 'app/layout/gitTabs.html',
     abstract:true
   })
 
@@ -17,7 +17,7 @@ angular.module('app.routes', [])
     url: '/home',
     views: {
       'tab1': {
-        templateUrl: 'templates/home.html',
+        templateUrl: 'app/home/home.html',
         controller: 'homeCtrl'
       }
     }
@@ -27,7 +27,7 @@ angular.module('app.routes', [])
     url: '/learn',
     views: {
       'tab2': {
-        templateUrl: 'templates/learn.html',
+        templateUrl: 'app/tutorial/gitCommand.html',
         controller: 'learnCtrl'
       }
     }
@@ -35,13 +35,13 @@ angular.module('app.routes', [])
 
   .state('about', {
     url: '/About',
-    templateUrl: 'templates/about.html',
+    templateUrl: 'app/about/about.html',
     controller: 'aboutCtrl'
   })
 
   .state('profile', {
     url: '/profile',
-    templateUrl: 'templates/profile.html',
+    templateUrl: 'app/profile/profile.html',
     controller: 'profileCtrl'
   })
 
