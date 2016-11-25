@@ -2,25 +2,35 @@
 (function () {
 
     var app = angular.module("app.controllers");
-    var homeController = function ($scope, github,$routeParams) {
-
-        $scope.message = "Hello Angular";
+    var homeCtrl = function ($scope, github) {
+        var vm =this;
+        vm.message = "Hello Angular";
 
         var onUserComplete = function (data) {
-            $scope.user = data;
-           github.getRepos($scope.user).then(fetchRepoInfo, onError);
+            vm.user = data;
+           github.getRepos(vm.user).then(fetchRepoInfo, onError);
         };
 
         var onError = function (reason) {
-            $scope.error = "Somthing went wron try after some time.";
+            vm.error = "Somthing went wron try after some time.";
         };
 
         var fetchRepoInfo=function(data) {
-            $scope.repos=data;
+            vm.repos=data;
         };
-        $scope.username=$routeParams.username;
-        github.getUser($scope.username).then(onUserComplete, onError);
+
+        vm.search=function(){
+            //vm.username=vm.username;
+            if(vm.username==="" ||vm.username===undefined)
+            {
+                github.getUser("migg81").then(onUserComplete, onError);
+            }
+            else
+            {
+                github.getUser(vm.username).then(onUserComplete, onError);
+            }
+        };        
     };
 
-    app.controller('homeController', homeController);
+    app.controller('homeCtrl', homeCtrl);
 } ());

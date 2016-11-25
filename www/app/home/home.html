@@ -1,10 +1,36 @@
 <ion-view title="Home" id="page6" style="">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" ng-controller="homeCtrl as vm">
     <form id="home-form1" class="list">
       <label class="item item-input" id="home-search1" name="searchGit" style="">
         <i class="icon ion-search placeholder-icon"></i>
-        <input placeholder="Git user" type="search" ng-click="search()">
+        <input placeholder="Git user" type="search" ng-model="vm.username" ng-click="vm.search()">
       </label>
+      <br>
+        <div class="card">
+           <div class="item item-divider item-energized">
+                {{vm.user.name}}
+            </div>
+            <a class="item item-text-wrap item-icon-right" ng-href="#{{vm.blog}}">
+                {{vm.user.blog}}
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+            <div class="item item-divider">
+                
+            </div>
+        </div>
+     
+      <div class="card" ng-repeat="repo in vm.repos" >
+           <div class="item item-divider item-energized">
+                {{repo.name}}
+            </div>
+            <a class="item item-text-wrap item-icon-right" ng-href="#{{vm.blog}}">
+                {{repo.description}}
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+            <div class="item item-divider">
+                {{repo.html_url}}
+            </div>
+        </div>
     </form>
   </ion-content>
 </ion-view>j

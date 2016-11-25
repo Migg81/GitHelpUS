@@ -39,6 +39,6 @@
         };
     };
 
-    var module=angular.module("githubViewer");
+    var module=angular.module("app.services");
     module.factory("github",github);
 }());
