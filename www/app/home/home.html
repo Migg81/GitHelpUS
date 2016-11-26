@@ -6,31 +6,37 @@
         <input placeholder="Git user" type="search" ng-model="vm.username" ng-click="vm.search()">
       </label>
       <br>
-        <div class="card">
-           <div class="item item-divider item-energized">
-                {{vm.user.name}}
-            </div>
-            <a class="item item-text-wrap item-icon-right" ng-href="#{{vm.blog}}">
-                {{vm.user.blog}}
-                <i class="icon ion-chevron-right icon-accessory"></i>
+    <div class="list card" id="home-card23">
+      <ion-item class="item-avatar positive" id="home-list-item32">
+        <img ng-src="{{vm.user.avatar_url}}" >
+        <a class="item item-text-wrap item-icon-right" style="border-width:0px" ng-href="#{{vm.blog}}">
+            {{vm.user.name}}
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>      
+      </ion-item>
+      <div class="item item-body"  id="home-list-item-container7">        
+          <p style="margin-top:0px;color:#000000;">
+            <strong>My Blog : </strong><a  ng-href="#{{vm.user.blog}}">
+                {{vm.user.blog}}             
             </a>
-            <div class="item item-divider">
-                
-            </div>
+          </p>
+          <p style="margin-top:0px;color:#000000;">
+            <strong>{{vm.user.bio}}</strong>
+          </p>
+      </div>
+    </div>
+    <div class="card" ng-repeat="repo in vm.repos" >
+        <div class="item item-divider item-energized">
+            {{repo.name}}
         </div>
-     
-      <div class="card" ng-repeat="repo in vm.repos" >
-           <div class="item item-divider item-energized">
-                {{repo.name}}
-            </div>
-            <a class="item item-text-wrap item-icon-right" ng-href="#{{vm.blog}}">
-                {{repo.description}}
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </a>
-            <div class="item item-divider">
-                {{repo.html_url}}
-            </div>
+        <a class="item item-text-wrap item-icon-right" ng-href="#{{vm.blog}}">
+            {{repo.description}}
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+        <div class="item item-divider">
+            {{repo.html_url}}
         </div>
+    </div>
     </form>
   </ion-content>
-</ion-view>j
+</ion-view>
