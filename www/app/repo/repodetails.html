@@ -1,0 +1,24 @@
+<ion-view title="Repo Details" id="gitrepo">
+  <ion-content padding="true" class="has-header" ng-controller="repodetailsCtrl as vm">
+    <div class="list card" id="page-card24">
+      <ion-item id="page-list-item43">vm.name
+        <ion-option-button class="button-positive"></ion-option-button>
+      </ion-item>
+      <div class="item item-body" id="page-list-item-container10">
+        <div id="page-markdown12" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">open_issues
+            <strong>vmopen_issues</strong>
+          </p>
+        </div>
+      </div>
+      <ion-item class="item-icon-left assertive" id="page-list-item44">
+        <i class="icon ion-music-note"></i>Play Song</ion-item>
+    </div>
+    <ion-list id="contributorList" ng-repeat="contributor in vm.repo.contributors" >
+      <ion-item class="item-thumbnail-left" id="page-list-item34" ui-sref="profile">
+        <img ng-src="{{contributor.avatar_url}}" >
+        <h2>{{contributor.login}}</h2><strong>contributions</strong>{{contributor.contributions}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

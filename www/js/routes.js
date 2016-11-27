@@ -45,6 +45,16 @@ angular.module('app.routes', [])
     controller: 'profileCtrl'
   })
 
+  .state('gitgub.repodetails', {
+    url: '/repo/:username/:reponame',
+    views: {
+      'tab1': {
+        templateUrl: 'app/repo/repodetails.html',
+        controller: 'repodetailsCtrl'
+      }
+    }
+  })
+
 $urlRouterProvider.otherwise('/mainTab/learn')
 
 });
