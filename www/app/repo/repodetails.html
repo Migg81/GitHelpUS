@@ -6,13 +6,15 @@
       </ion-item>
       <div class="item item-body" id="page-list-item-container10">
         <div id="page-markdown12" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Open Issues
-            <strong>{{vm.repo.open_issues}}</strong>
+          <p style="margin-top:0px;color:#000000;">
+              Open Issues : <strong>{{vm.repo.open_issues}} </strong>
+              Subscribers_Count : <strong>{{vm.repo.subscribers_count}}</strong>
           </p>
         </div>
       </div>
-      <ion-item class="item-icon-left assertive" id="page-list-item44">
-        <i class="icon ion-music-note"></i>Play Song</ion-item>
+      <ion-item class="assertive" id="page-list-item44">
+        Language : {{vm.repo.language}}
+      </ion-item>
     </div>
     <ion-list id="contributorList" ng-repeat="contributor in vm.repo.contributors" >
       <ion-item class="item-thumbnail-left" id="page-list-item34" ui-sref="profile">
