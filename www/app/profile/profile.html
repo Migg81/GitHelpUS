@@ -1,8 +1,13 @@
 <ion-view title="Profile" id="page9">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" ng-controller="profileCtrl as vm">
     <div class="list card" id="profile-card26">
-      <ion-item class="item-avatar" id="profile-list-item49">
-        <h2>Item</h2>
+       <ion-item class="item-thumbnail-left positive" id="profile-list-item49">
+        <img ng-src="{{vm.user.avatar_url}}">
+        <h2positive>Name :{{vm.user.name}}
+          <p>{{vm.user.location}}</p>
+          <ion-option-button class="button-positive"></ion-option-button>
+          <p>Public Repos:{{vm.user.public_repos}}</p>
+        </h2positive>
       </ion-item>
       <div id="profile-markdown17" class="show-list-numbers-and-dots">
         <p style="color:#000000;">Some friendly

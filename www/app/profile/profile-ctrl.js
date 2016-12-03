@@ -5,6 +5,14 @@
         
         vm.message = "Hello Angular";
 
+        var onUserComplete = function (data) {
+            vm.user = data;
+        };
+
+        var onError = function (reason) {
+            vm.error = "Somthing went wron try after some time.";
+        };
+
         if(vm.username==="" ||vm.username===undefined)
         {
             ///Need refactor as we need to pass logged in user info
@@ -14,6 +22,7 @@
         {
             github.getUser(vm.username).then(onUserComplete, onError);
         }
+
     };
 
     app.controller('profileCtrl', profileCtrl);
