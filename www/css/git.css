@@ -25,3 +25,18 @@
         list-style-type: decimal;
         padding-left:40px;
       }
+
+pre {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  /*! border-radius: 3px; */
+  display: block;
+  padding: 10px 15px 13px 15px;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border: solid 1px #efeee6;
+  color: #f14e32;
+  font-family: Courier, monospace;
+  line-height: 18px;
+  overflow: auto;
+}

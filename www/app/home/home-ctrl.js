@@ -2,7 +2,7 @@
 (function () {
 
     var app = angular.module("app.controllers");
-    var homeCtrl = function ($scope, github) {
+    var homeCtrl = function ($scope, github,dataUtil) {
         var vm =this;
         vm.message = "Hello Angular";
 
@@ -19,12 +19,13 @@
             vm.repos=data;
         };
 
+        vm.loginUser = dataUtil.getlogedInUser();
         vm.search=function(){
             //vm.username=vm.username;
             if(vm.username==="" ||vm.username===undefined)
             {
                 ///Need refactor as we need to pass logged in user info
-                github.getUser("migg81").then(onUserComplete, onError);
+                github.getUser(vm.loginUser.username).then(onUserComplete, onError);
             }
             else
             {
@@ -32,7 +33,8 @@
             }
         };        
         ///Need refactor as we need to pass logged in user info
-         github.getUser("migg81").then(onUserComplete, onError);
+        
+        github.getUser(vm.loginUser.username).then(onUserComplete, onError);
     };
 
     app.controller('homeCtrl', homeCtrl);

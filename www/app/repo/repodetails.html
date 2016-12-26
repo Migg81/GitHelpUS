@@ -17,7 +17,7 @@
       </ion-item>
     </div>
     <ion-list id="contributorList" ng-repeat="contributor in vm.repo.contributors" >
-      <ion-item class="item-thumbnail-left" id="page-list-item34" ui-sref="profile">
+      <ion-item class="item-thumbnail-left" id="page-list-item34" ng-click="vm.showProfile(contributor.login)">
         <img ng-src="{{contributor.avatar_url}}" >
         <h2>{{contributor.login}}</h2><strong>Contributions :</strong>{{contributor.contributions}}
       </ion-item>

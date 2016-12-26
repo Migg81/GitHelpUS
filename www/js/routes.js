@@ -12,8 +12,7 @@ angular.module('app.routes', [])
     templateUrl: 'app/layout/gitTabs.html',
     abstract:true
   })
-
-  .state('gitgub.home', {
+.state('gitgub.home', {
     url: '/home',
     views: {
       'tab1': {
@@ -40,7 +39,7 @@ angular.module('app.routes', [])
   })
 
   .state('profile', {
-    url: '/profile',
+    url: '/profile/:userid',
     templateUrl: 'app/profile/profile.html',
     controller: 'profileCtrl'
   })
@@ -53,6 +52,11 @@ angular.module('app.routes', [])
         controller: 'repodetailsCtrl'
       }
     }
+  })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'app/login/login.html',
+    controller: 'loginCtrl'
   })
 
 $urlRouterProvider.otherwise('/mainTab/learn')

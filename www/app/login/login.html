@@ -1,0 +1,19 @@
+<ion-view title="Login" id="page11" style="background-color:#E0F1E4;">
+  <ion-content padding="true" class="has-header" ng-controller="loginCtrl as vm">
+    <form id="login-form2" class="list">
+      <ion-list id="login-list8">
+        <label class="item item-input" id="login-input1">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="" ng-model="vm.username">
+        </label>
+        <label class="item item-input" id="login-input2">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="" ng-model="vm.pswd">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button id="login-button1" class="button button-stable  button-block"  ng-click="vm.authenticate()">Log in</button>
+      <a href="/signup" href-inappbrowser="_system" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+    </form>
+  </ion-content>
+</ion-view>

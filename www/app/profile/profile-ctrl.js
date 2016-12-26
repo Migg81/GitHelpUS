@@ -1,6 +1,6 @@
 (function(){
     var app = angular.module("app.controllers");
-    var profileCtrl = function (github, $stateParams ) {
+    var profileCtrl = function (github, $stateParams, dataUtil ) {
         var vm=this;
         
         vm.message = "Hello Angular";
@@ -13,10 +13,12 @@
             vm.error = "Somthing went wron try after some time.";
         };
 
+        vm.loginUser = dataUtil.getlogedInUser();
+        vm.username=$stateParams.userid;
+
         if(vm.username==="" ||vm.username===undefined)
         {
-            ///Need refactor as we need to pass logged in user info
-            github.getUser("migg81").then(onUserComplete, onError);
+            github.getUser(vm.loginUser.username).then(onUserComplete, onError);
         }
         else
         {
