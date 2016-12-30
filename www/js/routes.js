@@ -59,6 +59,6 @@ angular.module('app.routes', [])
     controller: 'loginCtrl'
   })
 
-$urlRouterProvider.otherwise('/mainTab/learn')
+$urlRouterProvider.otherwise('/login')
 
 });

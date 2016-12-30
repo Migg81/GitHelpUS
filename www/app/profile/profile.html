@@ -1,7 +1,7 @@
 <ion-view title="Profile" id="page9">
   <ion-content padding="true" class="has-header" ng-controller="profileCtrl as vm">
     <div class="list card" id="profile-card26">
-       <ion-item class="item-thumbnail-left positive" id="profile-list-item49">
+       <ion-item class="item-thumbnail-left positive" id="profile-list-item49" >
         <img ng-src="{{vm.user.avatar_url}}">
         <h2positive>Name :{{vm.user.name}}
           <p>{{vm.user.location}}</p>
@@ -9,15 +9,15 @@
           <p>Public Repos: {{vm.user.public_repos}}</p>
         </h2positive>
       </ion-item>
-      <div class="item item-body" id="profile-list-item-container13">
+      <div class="item item-body" id="profile-list-item-container13"  style="background-color:#E0F1E4;">
         <div id="profile-markdown16" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
+          <p class="margin-top:0px;color:#000000;">
             <div>
-                <p>Gists : {{vm.user.public_gists}} </p>
-                <p>Followers : {{vm.user.followers}}</p>
-                <p>Following : {{vm.user.following}}</p>
-                <p>Created at : {{vm.user.created_at}}</p>  
-                <p>Updated at : {{vm.user.updated_at}}</p>  
+                <p><a class="calm">Gists :</a> {{vm.user.public_gists}} </p>
+                <p><a class="calm">Followers :</a> {{vm.user.followers}}</p>
+                <p><a class="calm">Following : </a>{{vm.user.following}}</p>
+                <p><a class="calm">Created at :</a> {{vm.user.created_at}}</p>  
+                <p><a class="calm">Updated at : </a>{{vm.user.updated_at}}</p>  
             </div>           
           </p>
         </div>
